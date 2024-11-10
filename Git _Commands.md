@@ -6,6 +6,11 @@ ___
 * `git branch`: muestra las ramas existentes en el repositorio y destaca la rama actual. También se usa para crear, renombrar o eliminar ramas.
     * Para eliminar la rama amin, si ya no es util.
         * `git branch -D amin`
+
+    **Cambiar el nombre de la rama `master` a `main`**: En algunos repositorios antiguos, la rama principal se llama `master`. Para cambiar el nombre de la rama a `main`, sigue estos pasos:
+   - Cambia el nombre de la rama local: `git branch -m master main`
+   - Actualiza la rama predeterminada en el repositorio remoto: `git push -u origin main`
+   - Cambia la referencia de la rama en el repositorio remoto: `git push origin --delete master` (opcional, si deseas eliminar la rama `master` en el remoto)
 ___
 * `git checkout`: muestra las ramas existentes en el repositorio y destaca la rama actual. También se usa para crear, renombrar o eliminar ramas.
     * Para cambiar a una rama existente (por ejemplo, feature-branch), usa:
@@ -92,6 +97,13 @@ ___
     * `git clone <a lo que deseas clonar>`: Este comando lo escribes desde la terminal ubicado en la carpeta donde deseas clonar el respositorio.
     ___
 
+## Enlazar un repositorio Git local con GitHub: Para enlazar un repositorio Git local con un repositorio remoto en GitHub, sigue estos pasos:
+   - Crea un repositorio en GitHub (sin inicializar con un README).
+   - En tu terminal, en la carpeta del proyecto, agrega el repositorio remoto: `git remote add origin <URL-del-repositorio>`.
+     - Ejemplo: `git remote add origin https://github.com/usuario/nombre-del-repositorio.git`
+   - Verifica que el remoto esté correctamente agregado con: `git remote -v`.
+   - Ahora puedes usar `git push -u origin main` para enviar los cambios al repositorio de GitHub.
+___
 
 
 ## `git push` y `git pull`
